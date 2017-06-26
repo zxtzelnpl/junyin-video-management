@@ -1,0 +1,20 @@
+doctype
+html
+    head
+        title #{title}
+        link(href="/css/normalize.css",rel="stylesheet")
+        link(href="/css/front.css",rel="stylesheet")
+    body
+        .content
+            if videos&&videos.length>0
+                h3.title #{videos[0].title}
+                iframe(id="videoId" height=600 width=600 src='http://player.youku.com/embed/'+videos[0].vid frameborder=0 'allowfullscreen')
+                div.buttons
+                    a#openList(href="javascript:void(0)") 往期视频列表
+                div.videoIdBox#videoIdBox
+                    each item in videos
+                        div(class="videoId",data-vid='http://player.youku.com/embed/'+item.vid) #{item.title}
+                    .close#close X
+    script(src="/vendor/js/jquery-3.2.1.min.js")
+    script(src="/js/front.js")
+
