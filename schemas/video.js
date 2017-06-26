@@ -30,7 +30,6 @@ VideoSchema.virtual('vid').get(function(){
   var str=this.url;
 
   return str.replace(reg,function(reg,$1,$2,$3){
-    console.log(arguments);
     return $2
   });
 });
