@@ -49,7 +49,7 @@ exports.roomProfile = function(req,res,next){
   Promise
     .all([roomPromise,videoPromise])
     .then(function([room,videos]){
-      var url = req.protocol + '://' + req.get('host') + '/room/'+room.name;
+      var url = 'http://videos.jyzqsh.com/room/' +room.name;
       res.render('room-profile',{
         title:'房间详情',
         room:room,

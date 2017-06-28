@@ -15,7 +15,7 @@ block content
                     .span12.bio
                         .profile-box
                             .span12
-                                h6 #{url}
+                                h6: a(href=url,target="_blank") #{url}
                                 .span12 #{room.note}
                             .span12.pull-right
                                 a.btn-flat.pull-right.success.new-product.add-user(href="/admin/video-new/" + room._id) +Add video
