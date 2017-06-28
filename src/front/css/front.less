@@ -12,50 +12,35 @@ iframe{
   margin:0 auto;
   position:relative;
   width:600px;
-  height:700px;
 }
 .title{
   height:50px;
   line-height:50px;
 }
 .videoIdBox{
-  position:absolute;
-  top:0;
-  left:0;
+  margin-top:20px;
+  border-top:2px solid #7f7f7f;
   width:600px;
-  height:700px;
-  overflow-x:hidden ;
-  overflow-y: scroll;
-  background:rgba(0,0,0,.7);
-  display:none;
   .videoId{
+    border-bottom:2px solid #7f7f7f;
     width:600px;
     height:40px;
     line-height:40px;
-    text-align: center;
-    color:#fff;
     font-weight:bold;
     cursor:pointer;
-    &:first-child{
-      margin-top:50px;
+    .time{
+      float:right;
+      color:#8d8d8d;
     }
   }
-  .close{
-    position:absolute;
-    right:0;
-    top:0;
-    width:40px;
-    height:40px;
-    line-height:40px;
-    text-align:center;
-    color:#fff;
-    cursor:pointer;
-  }
 }
-.buttons{
-  height:50px;
-  line-height:50px;
-  a{
-    text-decoration: none;
-  }
+.more{
+  margin:0 auto 20px;
+  width:70px;
+  height:40px;
+  line-height:40px;
+  font-size:20px;
+  font-weight:bold;
+  background:url(../img/arrow_down.jpg) right center no-repeat;
+  cursor:pointer;
 }

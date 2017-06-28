@@ -1,6 +1,8 @@
 var VideoModel = require('../models/video.js');
 var RoomModel = require('../models/room.js');
 
+var pageSize=4;
+
 exports.index = function (req, res, next) {
   var room = req.params.room;
   RoomModel
@@ -8,7 +10,10 @@ exports.index = function (req, res, next) {
     .exec()
     .then(function (room) {
       if (room) {
-        return VideoModel.find({room: room._id}).exec()
+        return VideoModel
+          .find({room: room._id})
+          .limit(pageSize)
+          .exec()
       } else {
         return next('页面错误')
       }
@@ -16,6 +21,7 @@ exports.index = function (req, res, next) {
     .then(function(videos){
       res.render('index',{
         title:'往期视频回顾',
+        room:room,
         videos:videos
       })
     })
