@@ -34,6 +34,9 @@ VideoSchema.virtual('vid').get(function(){
   });
 });
 
+VideoSchema.set('toJSON',{getters:true,virtual:true});
+
+
 VideoSchema.pre('save', function (next) {
   var user = this;
   if (user.isNew) {

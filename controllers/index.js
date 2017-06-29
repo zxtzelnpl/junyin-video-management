@@ -20,6 +20,7 @@ exports.index = function (req, res, next) {
       }
     })
     .then(function (videos) {
+      console.log(videos);
       res.render('index', {
         title: '往期视频回顾',
         room: room,
@@ -39,7 +40,6 @@ exports.more = function (req, res, next) {
     .findOne({name: room_name})
     .exec()
     .then(function (room) {
-      console.log(room);
       if (room) {
         return VideoModel
           .find({room:room._id})
@@ -53,6 +53,7 @@ exports.more = function (req, res, next) {
     })
     .then(function (videos) {
       var jsonObj;
+      console.log(videos);
       if(videos.length>0){
         page = parseInt(page) + 1;
         jsonObj={
