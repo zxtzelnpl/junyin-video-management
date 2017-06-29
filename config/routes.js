@@ -14,7 +14,7 @@ module.exports=function(app){
 
   /**前端页面**/
   app.get('/room/:room',Index.index);
-  app.get('/front/:room',Index.index);
+  app.get('/more',Index.more);
 
   /**后台页面**/
   app.get('/admin/login',Admin.login);
