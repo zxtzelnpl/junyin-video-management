@@ -20,7 +20,6 @@ exports.index = function (req, res, next) {
       }
     })
     .then(function (videos) {
-      console.log(videos);
       res.render('index', {
         title: '往期视频回顾',
         room: room,
@@ -30,7 +29,31 @@ exports.index = function (req, res, next) {
     .catch(function (err) {
       next(err)
     })
+};
 
+exports.mobile=function(req,res,next){
+  var room = req.params.room;
+  var fun=req.query.fun;
+  RoomModel
+    .findOne({name: room})
+    .exec()
+    .then(function (room) {
+      if (room) {
+        return VideoModel
+          .find({room: room._id})
+          .exec()
+      }
+      else {
+        return next('此房间无资源')
+      }
+    })
+    .then(function (videos) {
+      var obj={videos};
+      res.send(fun+'(\''+JSON.stringify(obj)+'\')')
+    })
+    .catch(function (err) {
+      next(err)
+    })
 };
 
 exports.more = function (req, res, next) {

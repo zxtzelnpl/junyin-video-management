@@ -16,6 +16,9 @@ module.exports=function(app){
   app.get('/room/:room',Index.index);
   app.get('/more',Index.more);
 
+  /**手机API**/
+  app.get('/mobile/:room',Index.mobile);
+
   /**后台页面**/
   app.get('/admin/login',Admin.login);
   app.get('/admin/loginout',Admin.loginOut);
