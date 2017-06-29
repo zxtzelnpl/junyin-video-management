@@ -82,7 +82,7 @@ function prov() {
   /**
    * public
    */
-  gulp.task('public-build',['clean','model:prod','normalize:prod','admin-img:prod','admin-less:dev','admin-js:prod','front-img:prod','front-less:prod','front-js:prod'], function () {
+  gulp.task('public-build',['model:prod','normalize:prod','admin-img:prod','admin-less:dev','admin-js:prod','front-img:prod','front-less:prod','front-js:prod'], function () {
     console.log('Everything is finished');
   });
 }
