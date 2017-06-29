@@ -31,7 +31,6 @@ $('#more').on('click',function(){
       room:room
     },
     success:function(data){
-      console.log(data);
       if(data.state==='success'){
         var htmlStr='';
         data.videos.forEach(function(video){
