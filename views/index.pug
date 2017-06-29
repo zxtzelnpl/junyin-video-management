@@ -9,7 +9,7 @@ html
         input(type="hidden",id="room",value=room)
         .content
             if videos&&videos.length>0
-                iframe(id="videoId" height=600 width=600 src='http://player.youku.com/embed/'+videos[0].vid frameborder=0 'allowfullscreen')
+                iframe(id="videoId" height=600 width=450 src='http://player.youku.com/embed/'+videos[0].vid frameborder=0 'allowfullscreen')
                 div.videoIdBox#videoIdBox
                     each item in videos
                         div(class="videoId",data-vid='http://player.youku.com/embed/'+item.vid)
