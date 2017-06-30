@@ -98,8 +98,10 @@ exports.more = function (req, res, next) {
 };
 
 exports.video=function(req,res){
-  let vid=req.params.vid;
+  var vid=req.params.vid;
+  var title=req.query.title;
   res.render('mobile',{
-    vid
+    vid,
+    title
   })
 };
