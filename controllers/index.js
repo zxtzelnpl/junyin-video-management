@@ -48,8 +48,20 @@ exports.mobile=function(req,res,next){
       }
     })
     .then(function (videos) {
-      var obj={videos};
+      var obj;
+      if(videos&&videos.length>0){
+        obj={
+          state:'success',
+          videos
+        };
+      }else{
+        obj={
+          state:'fail',
+          err:'等待管理员添加新的视频'
+        }
+      }
       res.send(fun+'(\''+JSON.stringify(obj)+'\')')
+
     })
     .catch(function (err) {
       next(err)
