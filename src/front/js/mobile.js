@@ -1,5 +1,13 @@
 
 var vid=document.getElementById('vid').value;
+var video=$('#video');
+var width=video.width();
+var height=parseInt(width*0.7);
+var marginTop=-parseInt(height/2);
+video.css({
+  height:height,
+  marginTop:marginTop
+});
 
 new YKU.Player('video', {
   styleid: '0',
