@@ -96,3 +96,10 @@ exports.more = function (req, res, next) {
       next(err)
     })
 };
+
+exports.video=function(req,res){
+  let vid=req.params.vid;
+  res.render('mobile',{
+    vid
+  })
+};

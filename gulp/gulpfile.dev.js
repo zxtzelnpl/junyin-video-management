@@ -106,9 +106,9 @@ function dev(){
   });
 
   /**
-   * server
+   * server-watch
    */
-  gulp.task('server',['front-less:dev','front-img:dev','front-js:dev','admin-js:dev','admin-less:dev','admin-img:dev','normalize:dev','model:dev'], function() {
+  gulp.task('server-watch',['front-less:dev','front-img:dev','front-js:dev','admin-js:dev','admin-less:dev','admin-img:dev','normalize:dev','model:dev'], function() {
     const files=[
       'views/**/*.pug'
     ];
