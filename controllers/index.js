@@ -12,6 +12,7 @@ exports.index = function (req, res, next) {
       if (room) {
         return VideoModel
           .find({room: room._id})
+          .sort({_id:-1})
           .limit(pageSize)
           .exec()
       }
@@ -41,6 +42,7 @@ exports.mobile=function(req,res,next){
       if (room) {
         return VideoModel
           .find({room: room._id})
+          .sort({_id:-1})
           .exec()
       }
       else {
@@ -78,6 +80,7 @@ exports.more = function (req, res, next) {
       if (room) {
         return VideoModel
           .find({room:room._id})
+          .sort({_id:-1})
           .skip(page * pageSize)
           .limit(pageSize)
           .exec()
