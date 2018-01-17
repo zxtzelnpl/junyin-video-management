@@ -32,7 +32,7 @@ function prov() {
    */
   gulp.task('admin-js:prod', function () {
     return gulp.src(config.admin.js)
-      .pipe(uglify())
+      // .pipe(uglify())
       .pipe(gulp.dest(config.public.js))
   });
   gulp.task('admin-less:dev', function () {
