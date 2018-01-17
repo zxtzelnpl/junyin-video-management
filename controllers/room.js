@@ -1,6 +1,6 @@
 var RoomModel = require('../models/room.js');
 var VideoModel = require('../models/video.js');
-var pageSiz=5
+var pageSiz=8
 
 exports.roomList = function (req, res, next) {
   RoomModel
