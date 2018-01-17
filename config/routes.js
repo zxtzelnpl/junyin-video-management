@@ -45,6 +45,7 @@ module.exports=function(app){
   /*视频相关*/
   app.get('/admin/video-new/:room_id',Admin.adminRequired,Video.videoNew);
   app.get('/admin/video-update/:_id',Admin.adminRequired,Video.videoUpdate);
+  app.get('/admin/video-delete/:_id',Admin.adminRequired,Video.videoDelete);  //删除
   app.post('/video/new',Admin.adminRequired,Video.new);
   app.post('/video/update',Admin.adminRequired,Video.update);
 

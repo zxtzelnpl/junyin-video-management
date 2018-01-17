@@ -34,6 +34,22 @@ exports.videoUpdate = function(req,res,next){
     });
 };
 
+exports.videoDelete = function (req, res, next) {
+  var _id=req.params._id;
+  VideoModel
+      .findByIdAndRemove({_id:_id})
+      .then(function(data){
+        res.json({
+          state:'success',
+          data:data
+        })
+      })
+      .catch(function(err){
+        next(err)
+      })
+
+};
+
 exports.new = function(req,res,next){
   var video = new VideoModel(req.body);
   console.log(video);
