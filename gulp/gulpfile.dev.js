@@ -21,7 +21,9 @@ function dev(){
   gulp.task('front-js:dev',function(){
     return gulp.src(config.front.js)
       .pipe(gulp.dest(config.public.js))
-      .pipe(reload({stream:true}));
+      .pipe(reload(
+
+        {stream:true}));
   });
   gulp.task('front-less:dev', function () {
     return gulp.src(config.front.css)
@@ -114,7 +116,7 @@ function dev(){
     ];
 
     browserSync.init({
-      proxy: "localhost:3000/admin/welcome"
+      proxy: "localhost:3002/admin/welcome"
     });
 
     gulp.watch(config.front.js, ['front-js:dev']);
