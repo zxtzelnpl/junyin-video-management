@@ -48,7 +48,7 @@ const sessionMiddleware=session({
 const parseCookie = cookieParser(secret);
 
 /**模板文件*/
-app.set('views',path.join(__dirname,'./views'));
+app.set('views',path.join(__dirname,'views'));
 app.set('view engine','pug');
 
 /**中间件*/
