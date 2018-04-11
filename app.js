@@ -2,7 +2,7 @@ const path = require('path');
 
 /**定义常量*/
 const port = process.env.PORT || 3002;
-const dbUrl = 'mongodb://localhost/video';
+const dbUrl = require('./db/mongodb');
 const secret='video';
 
 /**外部引入*/
